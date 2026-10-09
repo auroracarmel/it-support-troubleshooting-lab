@@ -1,0 +1,76 @@
+Investigation 001: Internet Connectivity Troubleshooting
+
+1. Problem
+
+A user’s laptop is connected to Wi-Fi but cannot access websites. Other employees can access the internet.
+
+2. Initial Hypotheses
+
+* Incorrect IP configuration
+* DHCP failure
+* Default gateway connectivity issue
+* DNS resolution failure
+* Local firewall or network adapter issue
+
+3. Diagnostic Process
+
+Step 1: Inspect network configuration
+
+Command: ipconfig
+
+Purpose: Check the computer’s IPv4 address, subnet mask, and default gateway.
+
+Evidence: Pending investigation.
+
+Step 2: Test the default gateway
+
+Command: ping <default-gateway-IP>
+
+Purpose: Test whether the computer can reach its configured gateway.
+
+Evidence: Pending investigation.
+
+Step 3: Test external IP connectivity
+
+Command: ping 8.8.8.8
+
+Purpose: Test reachability to an external IP address.
+
+Evidence: Pending investigation.
+
+Step 4: Test DNS resolution
+
+Command: nslookup google.com
+
+Purpose: Check whether the domain name resolves to an IP address.
+
+Evidence:internet-connectivity
+
+4. Root Cause 
+
+The simulated investigation identified a Wi-Fi adapter error (Code 10). The laptop could not obtain a normal IPv4 configuration through DHCP, resulting in an APIPA address (169.254.18.42) and a missing default gateway.
+
+The evidence suggests a laptop-specific Wi-Fi adapter/driver issue.
+
+5. Resolution
+
+Followed the approved troubleshooting procedure to repair the Wi-Fi adapter driver and restarted the laptop.
+
+6. Verification
+
+After the simulated repair:
+
+* The laptop received IPv4 address 192.168.1.42.
+* The default gateway was 192.168.1.1.
+* Ping to the default gateway succeeded.
+* Ping to 8.8.8.8 succeeded.
+* Websites loaded successfully.
+
+7. Lessons Learned
+* An IPv4 address does not always indicate a working network configuration.
+* A 169.254.x.x address can indicate failure to obtain an address through DHCP.
+* A missing default gateway prevents normal communication with other networks.
+* Comparing one affected computer with working computers helps isolate the problem.
+* Diagnostic evidence should guide troubleshooting decisions instead of assumptions.
+* Connectivity should be tested again after applying a fix.
+To be completed after the investigation.
